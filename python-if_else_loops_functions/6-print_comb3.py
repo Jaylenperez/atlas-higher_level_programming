@@ -7,4 +7,3 @@ for i in range(10):
             print("{:02d}".format(i*10 + j))
         else:
             print("{:02d}, ".format(i*10 + j), end="")
-
