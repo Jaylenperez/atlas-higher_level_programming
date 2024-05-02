@@ -13,8 +13,8 @@ elif last_digit == 0:
 else:
     message = "and is less than 6 and not 0"
 
-# Print the result, including the sign of the last digit if original number was negative
+# Adjust the message for negative numbers
 if number < 0:
-    last_digit = -last_digit
+    message = message.replace("greater than", "less than")
 
 print(f"Last digit of {number} is {last_digit} {message}")
