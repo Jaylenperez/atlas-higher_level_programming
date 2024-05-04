@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 
-import importlib
+import calculator_1 # Import calculator_1 at the top of the file
 
 def main():
     a = 10
     b = 5
-
-    # Dynamically import calculator_1 within main()
-    calculator_1 = importlib.import_module('calculator_1')
 
     output = "{} + {} = {}\n".format(a, b, calculator_1.add(a, b))
     output += "{} - {} = {}\n".format(a, b, calculator_1.sub(a, b))
