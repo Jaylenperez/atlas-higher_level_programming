@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import calculator_1
 
 def main():
     a = 10
     b = 5
+
+    import calculator_1  # Import calculator_1 within main()
 
     output = "{} + {} = {}\n".format(a, b, calculator_1.add(a, b))
     output += "{} - {} = {}\n".format(a, b, calculator_1.sub(a, b))
