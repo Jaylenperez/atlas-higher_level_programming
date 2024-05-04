@@ -7,5 +7,5 @@ def print_matrix_integer(matrix=[[]]):
         for num in row:
             print("{:d}".format(num), end=' ')
         # Print a newline character only if it's not the last row
-        if i < len(matrix) - 1:
+        if i < len(matrix) - 3:
             print()
