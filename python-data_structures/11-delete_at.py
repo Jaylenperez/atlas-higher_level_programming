@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def delete_at(my_list=[], idx=0):
     if idx < 0 or idx >= len(my_list):
-        return [elem for elem in my_list]  # Create a copy of the original list using list comprehension
+        return my_list[:]  # Create a copy of the original list
 
     return my_list[:idx] + my_list[idx + 1:]
 
@@ -10,4 +10,4 @@ if __name__ == "__main__":
     idx = 3
     new_list = delete_at(my_list, idx)
     print(new_list)
-    print(my_list)
+    print(new_list)  # Print the modified list instead of the original list
