@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import copy
-
 def delete_at(my_list=[], idx=0):
     if idx < 0 or idx >= len(my_list):
-        return copy.deepcopy(my_list)
+        return [elem for elem in my_list]  # Create a copy of the original list using list comprehension
+
     return my_list[:idx] + my_list[idx + 1:]
 
 if __name__ == "__main__":
