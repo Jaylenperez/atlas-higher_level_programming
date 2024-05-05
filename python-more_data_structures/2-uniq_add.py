@@ -3,10 +3,10 @@
 def uniq_add(my_list=[]):
     """
     Adds all unique integers in 'my_list' and returns the sum.
-    
+
     Args:
     my_list (list): A list of integers.
-    
+
     Returns:
     int: The sum of all unique integers in 'my_list'.
     """
