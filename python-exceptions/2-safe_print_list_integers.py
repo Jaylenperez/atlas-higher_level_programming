@@ -13,8 +13,9 @@ def safe_print_list_integers(my_list=[], x=0):
             # If a ValueError or TypeError is raised, skip the element silently
             pass
         except IndexError:
-            # If an IndexError is raised (meaning we've reached the end of the list), break the loop
-            break
+            # If an IndexError is raised (meaning we've reached the end of the list), 
+            # instead of breaking, raise the exception to trigger the traceback
+            raise
     # Print a newline to ensure the output is properly formatted
     print()
     # Return the actual number of integers printed
