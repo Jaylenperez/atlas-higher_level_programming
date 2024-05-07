@@ -25,5 +25,8 @@ def list_division(my_list_1, my_list_2, list_length):
         except Exception as e:
             print(f"An error occurred: {e}")
             result.append(0)
+        finally:
+            # This block will execute regardless of whether an exception was raised or not
+            pass
 
     return result
