@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def safe_print_integer(value):
     try:
         # Attempt to format the value as an integer and print it
