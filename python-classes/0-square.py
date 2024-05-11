@@ -9,7 +9,8 @@ The Square class is currently empty, serving as a placeholder for future impleme
 class Square:
     """
     A class representing a square.
-    
-    This class can be used to create a square objects and perform operations related to squares.
+
+    This class can be used to create a square objects and perform operations
+    related to squares.
     """
     pass
