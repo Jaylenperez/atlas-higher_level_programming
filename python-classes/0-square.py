@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 
-"""
-This module defines a simple Square class.
-
-The Square class is currently empty, serving as a placeholder for future implementation of square-related functionality.
-"""
-
 class Square:
-    pass
+    """
+    Represents a square shape.
+    
+    This class serves as a basic representation of square shape.
+    It currently does not contain any attributes or methods.
+    """
+
+    def __init__(self):
+        """
+        Initializes a new instance of the Square class.
+        
+        This constructor does not take any parameters.
+        """
+        pass
