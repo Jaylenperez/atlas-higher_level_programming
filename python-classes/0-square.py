@@ -8,8 +8,6 @@ implementation of square-related functionality.
 """
 
 class Square:
-
-
     """
     A class representing a square.
 
