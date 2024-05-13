@@ -1,0 +1,21 @@
+>>> from main import say_my_name
+
+# Test with both first name and last name provided
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+# Test with only the first name provided
+>>> say_my_name("Alice")
+My name is Alice
+
+# Test with non-string first name (should raise a TypeError)
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test with non-string last name (should raise a TypeError)
+>>> say_my_name("Jane", 456)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
