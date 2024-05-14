@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-Module for printing a square with the character '#
-"""
+"""Module for printing a square with the character '#"""
+
 
 def print_square(size):
     """
@@ -35,3 +34,4 @@ if __name__ == "__main__":
         print_square(size)
     except ValueError:
         print("Size must be an integer.")
+
