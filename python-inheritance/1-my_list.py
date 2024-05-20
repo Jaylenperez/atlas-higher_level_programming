@@ -17,7 +17,7 @@ class MyList(list):
         This method iterates over the list, sorts it, and then prints it.
         """
         # Sort the list in place
-        self.sort()
+        self.sort(reverse=True)
 
         # Print the sorted list
         print(self)
