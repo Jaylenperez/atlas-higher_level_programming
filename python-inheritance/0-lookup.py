@@ -6,6 +6,7 @@ This module provides utility functions for working with lists.
 
 
 def lookup(obj):
+
     """
     This function takes an object as input and returns a list
     of its attributes and methods.
