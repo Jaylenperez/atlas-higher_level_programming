@@ -4,17 +4,19 @@
 This module provides utility functions for working with lists.
 """
 
+
 def lookup(obj):
     """
     This function takes an object as input and returns a list of its attributes and methods.
-    
+
     Parameters:
     obj (object): The object whose attributes and methods are to be listed.
-    
+
     Returns:
     list: A list of the object's attributes and methods.
     """
     return dir(obj)
+
 
 # Example usage
 if __name__ == "__main__":
