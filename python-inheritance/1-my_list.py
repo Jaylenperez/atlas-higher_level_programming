@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+This module defines a custom list class, 'MyList', which extends Python's
+built-in class.
+"""
+
 class MyList(list):
     """
     A subclass of list that overrides the default behavior to include a method for printing the list sorted in ascending order.
