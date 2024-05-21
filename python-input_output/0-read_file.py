@@ -7,6 +7,7 @@
 # This means if the function is called without providing a filename,
 # it will attempt to read from a file named after the default value,
 # which would be an empty string
+
 def read_file(filename=""):
     """Prints the contents of UTF8 text file"""
 
@@ -19,7 +20,7 @@ def read_file(filename=""):
 
         # Reads entire content of the file into a string.
         # The print function then outputs this content to the console.
-        # The 'end=""' parameter prevents adding a newline 
+        # The 'end=""' parameter prevents adding a newline
         # character at the end of the printed content,
         # so the output continues on the same line.
         print(f.read(), end="")
