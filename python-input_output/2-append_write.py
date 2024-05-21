@@ -6,7 +6,8 @@ def append_write(filename="", text=""):
     """Appends a string at the end of a UTF8 text file."""
 
     # Opens the file specified by filename in append mode ('a').
-    # The 'with' statement ensures the file is properly closed after operations are completed.
+    # The 'with' statement ensures the file is properly closed
+    # after operations are completed.
     # If the file doesn't exist, it will be created.
     with open(filename, "a", encoding="utf-8") as f:
 
