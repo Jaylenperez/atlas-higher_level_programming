@@ -5,13 +5,13 @@ from models.base import Base # Import the Base class from the models.base module
 
 class Rectangle(Base): # Create Rectangle class that inherits from Base class
     """Rectangle class"""
-    def __init__(self, width, height, x=0, y=0, id=None): # Create constructor. Here we pass in self, width, height, x with value 0, y with value 0, and id from base class
-        super().__init__(id) # Call constructor of parent class. This initializes id of Rectangle instance and ensures that the base class initialization logic is executed.
+    def __init__(self, width, height, x=0, y=0, id=None): # Constructor initializing rectangle with dimensions and position
+        super().__init__(id) # Call parent class constructor to initialize ID
 
-        self.width = width # Assign values to all the parameters
-        self.height = height
-        self.x = x
-        self.y = y
+        self.width = width # Set width of rectangle
+        self.height = height # Set height of rectangle
+        self.x = x # Set x-coordinate of rectangle
+        self.y = y # Set y-coordinate of rectangle
 
     @property # Property methods and setters are used to encapsulate access to the private instance variables.
     def width(self):
@@ -20,11 +20,11 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @width.setter
     def width(self, value):
-        if not isinstance(value, int):
+        if not isinstance(value, int): # Ensure value is an integer
             raise TypeError("width must be an integer")
-        if value <= 0:
+        if value <= 0: # Width must be positive
             raise ValueError("width must be > 0")
-        self.__width = value
+        self.__width = value # Update width
 
     @property
     def height(self):
@@ -33,11 +33,11 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @height.setter
     def height(self, value):
-        if not isinstance(value, int):
+        if not isinstance(value, int): # Ensure height is an integer
             raise TypeError("height must be an integer")
-        if value <= 0:
+        if value <= 0: # height must be positive
             raise ValueError("height must be > 0")
-        self.__height = value
+        self.__height = value # Update height
 
     @property
     def x(self):
@@ -46,11 +46,11 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @x.setter
     def x(self, value):
-        if not isinstance(value, int):
+        if not isinstance(value, int): # Ensure that value is an integer
             raise TypeError("x must be an integer")
-        if value < 0:
+        if value < 0: # x must be positive
             raise ValueError("x must be >= 0")
-        self.__x = value
+        self.__x = value # Update x
 
     @property
     def y(self):
@@ -59,8 +59,8 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @y.setter
     def y(self, value):
-        if not isinstance(value, int):
+        if not isinstance(value, int): # Ensure value is an integer
             raise TypeError("y must be an integer")
-        if value < 0:
+        if value < 0: # y must be positive
             raise ValueError("y must be >= 0")
-        self.__y = value
+        self.__y = value # Update y
