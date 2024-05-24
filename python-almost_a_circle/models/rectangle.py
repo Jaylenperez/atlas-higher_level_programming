@@ -83,4 +83,9 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
     def __str__(self):
         """
         Defines a format for the string representation of the class"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \ {self.width}/{self.__height}"
+        # Returns a formatted string that includes the class name "Rectangle" followed by its attrubutes (id, x, y, width, height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, # Inserts id attribute of the instance
+                                                       self.x,  # Inserts x coordinate of the instance
+                                                       self.y,  # Inserts y coordinate of the instance
+                                                       self.width, # Inserts the width of the instance
+                                                       self.height) # Inserts the height of the instance
