@@ -67,8 +67,8 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     def area(self):
         """
-        Returns area of rectangle
+        This method calculates and returns the area of the rectangle.
         """
-        area = self.width * self.height
-        
-        return area
+        area = self.width * self.height # The width represents one side of the rectangle. It is multiplied by the height attribute (the other side) to calculate the total area.
+
+        return area # Calculated area is returned to the caller.
