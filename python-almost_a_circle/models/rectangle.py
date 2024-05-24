@@ -64,3 +64,11 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
         if value < 0: # y must be positive
             raise ValueError("y must be >= 0")
         self.__y = value # Update y
+
+    def area(self):
+        """
+        Returns area of rectangle
+        """
+        area = self.width * self.height
+        
+        return area
