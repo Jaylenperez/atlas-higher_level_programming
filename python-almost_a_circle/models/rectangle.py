@@ -77,6 +77,9 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
         """
         Prints the size of rectangle using #
         """
+        for _ in range(self.y): # Loop through y-coordinate of rectangle, printing empty lines to create space above the rectangle
+            print()
+
         for _ in range(self.height): # Loop over the height of the rectangle
             print(" " * self.x + "#" * self.width) # Print spaces equal to the x-coordinate followed by '#' characters equal to the width
 
