@@ -113,3 +113,18 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
                     self.y = arg
                 else: # Exits the loop if more than 5 arguments are passed, as there are no more attributes to assign
                     break
+
+        elif len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key =="height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+                else:
+                    break
