@@ -92,3 +92,24 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
                                                        self.y,  # Inserts y coordinate of the instance
                                                        self.width, # Inserts the width of the instance
                                                        self.height) # Inserts the height of the instance
+
+    def update(self, *args, **kwargs):
+        """
+        Assign arguments to attributes based on their positions.
+        """
+        if args: # Checks if any positional arguments were passed to the method.
+            attributes = ["id", "width", "height", "x", "y"] # Initialize list of attribute names in the order they should be assigned
+
+            for count, arg in enumerate(args): # Iterates over the positional arguments passed to the method
+                if count == 0: # Assigns the 1st argument to the id attribute of the instance
+                    self.id = arg
+                elif count == 1: # Assings the 2nd argument to the width attribute of the instance
+                    self.width = arg
+                elif count == 2: # Assigns the 3rd argument to the height attribute of the instance
+                    self.height = arg
+                elif count == 3: # Assigns the 4th argument to the x attribute of the instance
+                    self.x = arg
+                elif count == 4: # Assings the 5th argument to the y attribute of the instance
+                    self.y = arg
+                else: # Exits the loop if more than 5 arguments are passed, as there are no more attributes to assign
+                    break
