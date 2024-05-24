@@ -79,3 +79,8 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
         """
         for _ in range(self.height): # Loop over the height of the rectangle
             print(" " * self.x + "#" * self.width) # Print spaces equal to the x-coordinate followed by '#' characters equal to the width
+
+    def __str__(self):
+        """
+        Defines a format for the string representation of the class"""
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \ {self.width}/{self.__height}"
