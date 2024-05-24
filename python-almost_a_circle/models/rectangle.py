@@ -72,3 +72,10 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
         area = self.width * self.height # The width represents one side of the rectangle. It is multiplied by the height attribute (the other side) to calculate the total area.
 
         return area # Calculated area is returned to the caller.
+
+    def display(self):
+        """
+        Prints the size of rectangle using #
+        """
+        for _ in range(self.height): # Loop over the height of the rectangle
+            print(" " * self.x + "#" * self.width) # Print spaces equal to the x-coordinate followed by '#' characters equal to the width
