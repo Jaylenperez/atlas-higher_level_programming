@@ -20,12 +20,12 @@ class Square(Rectangle): # Defining a square class inheriting from Rectangle
         """
         Get/set the size of the Square.
         """
-        return self.width
+        return self.width # Directly returning the width attribute, which represents the size of the square
 
     @size.setter
     def size(self, value):
-        self.width = value
-        self.height = value
+        self.width = value # Setting the width attribute to the provided value
+        self.height = value # Additionally, setting the height attribute to the same value to ensure the square remains a perfect square.
 
     def __str__(self):
         """
