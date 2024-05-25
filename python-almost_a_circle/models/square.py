@@ -14,7 +14,19 @@ class Square(Rectangle): # Defining a square class inheriting from Rectangle
         Square class constructor
         """
         super().__init__(size, size, x, y, id) # Calling the parent class constructor with size for both width and height
-    
+
+    @property
+    def size(self):
+        """
+        Get/set the size of the Square.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """
         Str representation
