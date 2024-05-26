@@ -12,7 +12,7 @@ class Base:
             Base.__nb_objects += 1 # If value is not provided we increment the private class attribute by 1
             self.id = Base.__nb_objects # assign unique ID to each instance that is created from the base model class starting from each new instance or object
 
-    @staticmethod
+    @staticmethod # Serialize 
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries.
         Args:
@@ -40,3 +40,11 @@ class Base:
                 for obj in list_objs:
                     list_dict.append(obj.to_dictionary())
                 jsonfile.write(Base.to_json_string(list_dict))
+
+    def from_json_string(json_string): # Deserialize string
+        """
+        
+        """
+        if json_string is None or json_string == "[]": # If json string is empty
+            return [] # Return empty python list
+        return json.loads(json_string) # Else, we should 
