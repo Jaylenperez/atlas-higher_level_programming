@@ -63,3 +63,19 @@ class Square(Rectangle): # Defining a square class inheriting from Rectangle
                     self.y = value
                 else: # Break the loop if a non-matching keyword argument is encountered
                     break
+
+    def to_dictionary(self):
+            """Return the dictionary representation of the Square."""
+            square_dict = {
+                "id": self.id,
+                "size": self.width,
+                "x": self.x,
+                "y": self.y
+            }
+
+            return square_dict
+
+    def __str__(self):
+        """Return the print() and str() representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)  
