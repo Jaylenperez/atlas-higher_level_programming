@@ -128,3 +128,16 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
                     self.y = value
                 else:
                     break
+    def to_dictionary(self):
+        """
+        Represents a dictionary representation of rectangle
+        """
+        rec_dict = {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+        }
+
+        return rec_dict
