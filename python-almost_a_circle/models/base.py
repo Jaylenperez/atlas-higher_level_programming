@@ -48,3 +48,16 @@ class Base:
         if json_string is None or json_string == "[]": # If json string is empty
             return [] # Return empty python list
         return json.loads(json_string) # Else, we should 
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instancce with all attributes already set.
+        """
+        if dictionary and dictionary != {}: # if dictionary is present and not empty
+            if cls.__name__ == "Rectangle": # check if class name is coming from Rectangle class
+                dummy = cls(1, 1) # dummy instance. pass in values of width and height
+            else: # If it is not a rectangle it is a square
+                dummy = cls(1)
+            dummy.update(**dictionary) # use update method to apply values from dictionaries
+
+            return dummy
