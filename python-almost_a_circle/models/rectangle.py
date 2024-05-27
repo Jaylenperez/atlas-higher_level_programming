@@ -4,8 +4,22 @@
 from models.base import Base # Import the Base class from the models.base module.
 
 class Rectangle(Base): # Create Rectangle class that inherits from Base class
-    """Rectangle class"""
+    """
+    Represents a rectangle with properties such as width, height, x, y, and id.
+    Inherits from the Base class to utilize its unique ID assignment feature.
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None): # Constructor initializing rectangle with dimensions and position
+        """
+        Initializes a new Rectangle instance with given dimensions and position.
+        
+        Args:
+            width (int): Width of the rectangle.
+            height (int): Height of the rectangle.
+            x (int, optional): X-cooddinate of the rectangle. Defaults to 0.
+            y (int, optional): Y-coordinate of the rectangle. Defaults to 0.
+            id (int, optional): Unique ID for the rectangle. Defaults to None.
+        """
         super().__init__(id) # Call parent class constructor to initialize ID
 
         self.width = width # Set width of rectangle
@@ -15,11 +29,23 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @property # Property methods and setters are used to encapsulate access to the private instance variables.
     def width(self):
-        """Gets the value for width"""
+        """
+        Getter for the width property.
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        Setter for the width property.
+        
+        Args:
+            value (int): New width value.
+        
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to 0.
+        """
         if not isinstance(value, int): # Ensure value is an integer
             raise TypeError("width must be an integer")
         if value <= 0: # Width must be positive
@@ -28,11 +54,23 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @property
     def height(self):
-        """Gets the value for height"""
+        """
+        Getter for the height property.
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Setter for the height property.
+
+        Args:
+            value (int): New height value.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to 0.
+        """
         if not isinstance(value, int): # Ensure height is an integer
             raise TypeError("height must be an integer")
         if value <= 0: # height must be positive
@@ -41,11 +79,23 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @property
     def x(self):
-        """Gets the value for x"""
+        """
+        Getter for the x-coordinate property.
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """
+        Setter for the x-coordinate property.
+        
+        Args:
+            value (int): New x-coordinate value.
+        
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        """
         if not isinstance(value, int): # Ensure that value is an integer
             raise TypeError("x must be an integer")
         if value < 0: # x must be positive
@@ -54,11 +104,23 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     @property
     def y(self):
-        """Gets the value for y"""
+        """
+        Getter for the y-coordinate property.
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """
+        Setter for the y-coordinate property.
+
+        Args: 
+            value (int): New y-coordinate value.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        """
         if not isinstance(value, int): # Ensure value is an integer
             raise TypeError("y must be an integer")
         if value < 0: # y must be positive
@@ -67,7 +129,10 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     def area(self):
         """
-        This method calculates and returns the area of the rectangle.
+        Calculates and returns the area of the rectangle.
+
+        Returns:
+            int: Area of the rectangle.
         """
         area = self.width * self.height # The width represents one side of the rectangle. It is multiplied by the height attribute (the other side) to calculate the total area.
 
@@ -75,7 +140,7 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     def display(self):
         """
-        Prints the size of rectangle using #
+        Prints the rectangle to the console.
         """
         for _ in range(self.y): # Loop through y-coordinate of rectangle, printing empty lines to create space above the rectangle
             print()
@@ -85,7 +150,11 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     def __str__(self):
         """
-        Defines a format for the string representation of the class"""
+        Returns a string representation of the rectangle instance.
+
+        Returns:
+            str: Formatted string representation of the rectangle.
+        """
         # Returns a formatted string that includes the class name "Rectangle" followed by its attrubutes (id, x, y, width, height)
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, # Inserts id attribute of the instance
                                                        self.x,  # Inserts x coordinate of the instance
@@ -95,7 +164,11 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
 
     def update(self, *args, **kwargs):
         """
-        Assign arguments to attributes based on their positions.
+        Updates the attributes of the rectangle instance.
+
+        Args:
+            *args: Positional arguments specifying the attributes to update in order: id, width, height, x, y.
+            **kwargs: Keyword arguments specifying the attributes to update.
         """
         if args: # Checks if any positional arguments were passed to the method.
             attributes = ["id", "width", "height", "x", "y"] # Initialize list of attribute names in the order they should be assigned
@@ -130,7 +203,10 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
                     break
     def to_dictionary(self):
         """
-        Represents a dictionary representation of rectangle
+        Returns a dictionary representation of the rectangle instance.
+
+        Returns:
+            dict: Dictionary representation of the rectangle instance.
         """
         rec_dict = {
                 "id": self.id,
