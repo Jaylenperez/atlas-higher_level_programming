@@ -3,9 +3,33 @@
 import json
 
 class Base:
-    """Represents the base model"""
+    """
+    A Base class that assigns a unique ID to each instance upon creation.
+
+    This class serves as a foundation for other classes, automatically assigning a unqiue identifier to each instance.
+    The ID is incremented for each new instance, ensuring uniqueness across all instances of derived classes.
+
+    Attributes:
+        __nb_objects (int): A private class attribute that keeps track of the number of instances created.
+        It is initialized to 0 and incremented each time a new instance is created without a specified ID.
+    
+    Methods:
+        __init__(self, id=None): Initializes a new instance of the class. If an ID is provided, it is assigned to the instance;
+                                otherwise, a unique ID is generated based on the current count of instances.
+        to_json_string(list_dictionaries): Returns the JSON string representation of list_dictionaries.
+        save_to_file(cls, list_objs): Writes the JSON string representation of list_objs to a file.
+        from_json_string(json_string): Deserializes a JSON string into a Python object.
+        create(cls, **dictionary): Returns an instance with all attributes already set.
+        load_from_file(cls): Loads a list of instances from a JSON file.
+    """
+
     __nb_objects = 0 # Define class private attribute called number of objects. Initialize to 0
+
     def __init__(self, id=None): # Define class constructor that takes self and optional parameter ID Initialied to None
+        """
+        Initializes a new instance of the class. If an ID is provided, it is assigned to the instance;
+        otherwise, a unique ID is generated based on the current count of instances.
+        """
         if id is not None: # Check if ID has been provided
             self.id = id # If ID is provided, we are going to assign the value of self.ID attribute
         else:
@@ -14,9 +38,14 @@ class Base:
 
     @staticmethod # Serialize 
     def to_json_string(list_dictionaries):
-        """Returns the JSON string representation of list_dictionaries.
+        """
+        Serializes a list of dictionaries into a JSON string.
+
         Args:
-            list_dictionaries (list): A list of dictionaries.
+            list_dictionaries (list): List of dictionaries to serialize.
+
+        Returns:
+            str: JSON string representation of the input list of dictionaries.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
@@ -26,9 +55,11 @@ class Base:
     
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of list_objs to a file.
+        """
+        Saves a list of objects to a JSON file.
+
         Args:
-            list_objs (list): List of instances who inherts of Base
+            list_objs (list): List of objects to serialize and save to a file.
         """
         file_name = "{}.json".format(cls.__name__)
 
@@ -43,7 +74,13 @@ class Base:
 
     def from_json_string(json_string): # Deserialize string
         """
+        Deserialize a JSON sting into a Python object.
+
+        Args:
+            json_string (str): JSON string to deserialize.
         
+        Returns:
+            list: List of deserialized objects.
         """
         if json_string is None or json_string == "[]": # If json string is empty
             return [] # Return empty python list
@@ -51,7 +88,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instancce with all attributes already set.
+        """
+        Creates an instance with all attributes already set using a dictionary.
+
+        Args:
+            dictionary (dict): Dictionary containing key-value pairs representing the attributes and their values.
+        
+        Returns:
+            instance: An instance of the class with attributes set according to the dictionary.
         """
         if dictionary and dictionary != {}: # if dictionary is present and not empty
             if cls.__name__ == "Rectangle": # check if class name is coming from Rectangle class
@@ -65,7 +109,10 @@ class Base:
     @classmethod # Responsible for loading a lsit of instances from a json file 
     def load_from_file(cls):
         """
-        
+        Loads a list of instances from a JSON file.
+
+        Returns:
+            list: List of instances loaded from the file.
         """
         file_name = "{}.json".format(cls.__name__)
 
