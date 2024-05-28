@@ -27,14 +27,14 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
         self.x = x # Set x-coordinate of rectangle
         self.y = y # Set y-coordinate of rectangle
 
-    @property # Property methods and setters are used to encapsulate access to the private instance variables.
+    @property # Property getter for the width property
     def width(self):
         """
         Getter for the width property.
         """
         return self.__width
 
-    @width.setter
+    @width.setter # Property setter for the width property
     def width(self, value):
         """
         Setter for the width property.
@@ -52,14 +52,14 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
             raise ValueError("width must be > 0")
         self.__width = value # Update width
 
-    @property
+    @property # Property getter for height property
     def height(self):
         """
         Getter for the height property.
         """
         return self.__height
 
-    @height.setter
+    @height.setter # Property setter for height property
     def height(self, value):
         """
         Setter for the height property.
@@ -77,14 +77,14 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
             raise ValueError("height must be > 0")
         self.__height = value # Update height
 
-    @property
+    @property # Property getter for x-coordinate property.
     def x(self):
         """
         Getter for the x-coordinate property.
         """
         return self.__x
 
-    @x.setter
+    @x.setter # Property setter for x-coordinate property.
     def x(self, value):
         """
         Setter for the x-coordinate property.
@@ -102,14 +102,14 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
             raise ValueError("x must be >= 0")
         self.__x = value # Update x
 
-    @property
+    @property # Property getter for the y-coordinate property.
     def y(self):
         """
         Getter for the y-coordinate property.
         """
         return self.__y
 
-    @y.setter
+    @y.setter # Property setter for the y-coordinate property.
     def y(self, value):
         """
         Setter for the y-coordinate property.
@@ -187,17 +187,17 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
                 else: # Exits the loop if more than 5 arguments are passed, as there are no more attributes to assign
                     break
 
-        elif len(kwargs) > 0:
+        elif len(kwargs) > 0: # Checking if keyword arguments were passed
             for key, value in kwargs.items():
-                if key == "id":
+                if key == "id": # Assigning the id attribute of the instance
                     self.id = value
-                elif key == "width":
+                elif key == "width": # Assigning the width attribute of the instance
                     self.width = value
-                elif key =="height":
+                elif key =="height": # Assigning the height attribute of the instance
                     self.height = value
-                elif key == "x":
+                elif key == "x": # Assigning the x attribute of the instance
                     self.x = value
-                elif key == "y":
+                elif key == "y": # Assigning the y attribute of the instance
                     self.y = value
                 else:
                     break
@@ -208,7 +208,7 @@ class Rectangle(Base): # Create Rectangle class that inherits from Base class
         Returns:
             dict: Dictionary representation of the rectangle instance.
         """
-        rec_dict = {
+        rec_dict = { # Creating dictionary with the rectangle instance's attributes
                 "id": self.id,
                 "width": self.width,
                 "height": self.height,
