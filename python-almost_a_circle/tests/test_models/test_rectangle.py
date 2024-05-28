@@ -107,3 +107,31 @@ class TestRectangle(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class TestRectangle_display(unittest.TestCase):
+    """Unittests for testing display method of Rectangle class."""
+
+    def test_display_without_x_y(self):
+        r1 = Rectangle(2, 3)
+        expected_output = "##\n##\n##\n"
+        from io import StringIO
+        import sys
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+    def test_display_without_y(self):
+        r1 = Rectangle(2, 3, 2)
+        expected_output = "  ##\n  ##\n  ##\n"
+        from io import StringIO
+        import sys
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+if __name__ == "__main__":
+    unittest.main()
