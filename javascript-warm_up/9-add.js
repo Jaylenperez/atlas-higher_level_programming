@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // Define a function called 'add' that takes two arguments and returns their sum
 function add (a, b) {
-    return a + b;
+  return a + b;
 }
 
 // Get the command line arguments (excluding script name)
