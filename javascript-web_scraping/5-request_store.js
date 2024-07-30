@@ -20,6 +20,6 @@ request(url, (error, response, body) => {
       console.error(`Error writing to file: ${err}`);
       return;
     }
-    console.log(`Content saved to ${filePath}`);
+    // console.log(`Content saved to ${filePath}`);
   });
 });
